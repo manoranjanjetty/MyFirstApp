@@ -4,7 +4,7 @@ package com.firstproj.Courseinfo.cli.Service;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.runners.Parameterized;
+//import org.junit.runners.Parameterized;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -33,4 +33,6 @@ class AllCoursesTest {
                 new AllCourses("id", "test course", "00:00:00","url", false);
         assertEquals(0, courses.DurationInMinutes());
     }*/
+
+
 }
