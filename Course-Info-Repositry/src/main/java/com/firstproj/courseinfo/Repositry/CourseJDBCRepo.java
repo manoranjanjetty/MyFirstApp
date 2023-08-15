@@ -18,6 +18,12 @@ class CourseJDBCRepo implements CourseRepositry {
             MERGE INTO course(id, name, length, url)
              VALUES (?, ?, ?, ?);
 create table course(    id     int,    name   int,    length int,    url    int);            """;
+
+    //Need to look here for DB issue
+
+
+
+    //*************************************************************//
     private static DataSource datasource;
 
     public CourseJDBCRepo(String databaseFile) {

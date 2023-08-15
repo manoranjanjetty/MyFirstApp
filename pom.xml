@@ -11,6 +11,7 @@
     <modules>
         <module>Course-Info-Repositry</module>
         <module>Course-Info-Cli</module>
+        <module>Course-info-server</module>
     </modules>
 
     <properties>

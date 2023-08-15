@@ -2,6 +2,8 @@ package com.firstproj.Courseinfo.cli;
 
 import com.firstproj.Courseinfo.cli.Service.AllCourses;
 import com.firstproj.Courseinfo.cli.Service.CourseRetrievalService;
+import com.firstproj.Courseinfo.cli.Service.CourseStorageService;
+import com.firstproj.courseinfo.Repositry.CourseRepositry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,6 +34,10 @@ public class CourseRetriever {
     private static void retrieveCourses(String authorID) {
         LOG.info("Retrieving Courses for Author : '{}' ", authorID);
         CourseRetrievalService courseRetrievalService = new CourseRetrievalService();
+
+        CourseRepositry courseRepositry = CourseRepositry.openCourseReopsitry("./courses.db");
+        CourseStorageService courseStorageService = new CourseStorageService(courseRepositry);
+
        // List<AllCourses> CourseToStore = courseRetrievalService.getCourses(authorID); "Filtering the Courses"
         List<AllCourses> CourseToStore = courseRetrievalService.getCourses(authorID)
                         .stream()
@@ -39,6 +45,8 @@ public class CourseRetriever {
                 .filter(not(AllCourses::isRetired))
                         .toList();
         LOG.info("Retrieved the following {} course : {}", CourseToStore.size(),CourseToStore);
+        courseStorageService.storePluralsightCourses(CourseToStore);
+        LOG.info("Courses successfully stored...");
     }//end retrieveCourses
 
 }//end class
