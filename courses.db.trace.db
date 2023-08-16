@@ -1,0 +1,10 @@
+2023-08-15 16:50:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found; SQL statement:
+            MERGE INTO course(id, name, length, url)
+             VALUES (?, ?, ?, ?);
+create table course(    id     int,    name   int,    length int,    url    int); [42102-214]
+2023-08-15 16:54:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COURSE" not found; SQL statement:
+            MERGE INTO course(id, name, length, url)
+             VALUES (?, ?, ?, ?);
+create table course(    id     int,    name   int,    length int,    url    int); [42102-214]
